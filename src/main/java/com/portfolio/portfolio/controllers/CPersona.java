@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("persona")
-@CrossOrigin(origins = {"https://portfolio-mariel-torres.web.app", "http://localhost:4200"})
+@CrossOrigin(origins = "http://localhost:4200")
 public class CPersona {
     @Autowired
     SPersona servPerso;
