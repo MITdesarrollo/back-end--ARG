@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("contacto")
-@CrossOrigin(origins = "https://portfolio-mariel-torres.web.app")
+@CrossOrigin(origins = {"https://portfolio-mariel-torres.web.app", "http://localhost:4200"})
 public class CContacto {
     @Autowired
     SContacto servCont;
