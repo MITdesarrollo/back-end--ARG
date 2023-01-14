@@ -70,7 +70,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String titulo, String descripcion, String img, String email, String curriculum, Date nacimiento, List<Educacion> educaciones, List<Contacto> contactos, List<Experiencia> experiencias, List<Herramienta> herramientas, List<Proyecto> proyectos) {
+    public Persona(String nombre, String apellido, String titulo, String descripcion, String img, String email, String curriculum, Date nacimiento, List<Educacion> educaciones, List<Contacto> contactos, List<Experiencia> experiencias, List<Herramienta> herramientas, List<Proyecto> proyectos, List<Usuario> usuarios) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
@@ -84,6 +84,7 @@ public class Persona {
         this.experiencias = experiencias;
         this.herramientas = herramientas;
         this.proyectos = proyectos;
+        this.usuarios = usuarios;
     }
 
     public Persona(String nombre, String apellido, String titulo, String descripcion, String img, String email, String curriculum, Date nacimiento) {
@@ -209,17 +210,25 @@ public class Persona {
         this.proyectos = proyectos;
     }
 
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Persona persona = (Persona) o;
-        return id == persona.id && Objects.equals(nombre, persona.nombre) && Objects.equals(apellido, persona.apellido) && Objects.equals(titulo, persona.titulo) && Objects.equals(descripcion, persona.descripcion) && Objects.equals(img, persona.img) && Objects.equals(email, persona.email) && Objects.equals(curriculum, persona.curriculum) && Objects.equals(nacimiento, persona.nacimiento) && Objects.equals(educaciones, persona.educaciones) && Objects.equals(contactos, persona.contactos) && Objects.equals(experiencias, persona.experiencias) && Objects.equals(herramientas, persona.herramientas) && Objects.equals(proyectos, persona.proyectos);
+        return id == persona.id && Objects.equals(nombre, persona.nombre) && Objects.equals(apellido, persona.apellido) && Objects.equals(titulo, persona.titulo) && Objects.equals(descripcion, persona.descripcion) && Objects.equals(img, persona.img) && Objects.equals(email, persona.email) && Objects.equals(curriculum, persona.curriculum) && Objects.equals(nacimiento, persona.nacimiento) && Objects.equals(educaciones, persona.educaciones) && Objects.equals(contactos, persona.contactos) && Objects.equals(experiencias, persona.experiencias) && Objects.equals(herramientas, persona.herramientas) && Objects.equals(proyectos, persona.proyectos) && Objects.equals(usuarios, persona.usuarios);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, apellido, titulo, descripcion, img, email, curriculum, nacimiento, educaciones, contactos, experiencias, herramientas, proyectos);
+        return Objects.hash(id, nombre, apellido, titulo, descripcion, img, email, curriculum, nacimiento, educaciones, contactos, experiencias, herramientas, proyectos, usuarios);
     }
 
     @Override
@@ -239,6 +248,7 @@ public class Persona {
                 ", experiencias=" + experiencias +
                 ", herramientas=" + herramientas +
                 ", proyectos=" + proyectos +
+                ", usuarios=" + usuarios +
                 '}';
     }
 }
