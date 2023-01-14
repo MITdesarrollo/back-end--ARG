@@ -64,6 +64,9 @@ public class Persona {
     @OneToMany (mappedBy="persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY )
     private List<Proyecto> proyectos;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy="persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+    private List<Usuario> usuarios;
     public Persona() {
     }
 
