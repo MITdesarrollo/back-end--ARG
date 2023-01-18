@@ -1,6 +1,5 @@
 package com.portfolio.portfolio.controllers;
 
-import com.portfolio.portfolio.entitys.Persona;
 import com.portfolio.portfolio.entitys.Usuario;
 import com.portfolio.portfolio.services.SUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +31,7 @@ public class CUsuario {
     @PostMapping("/create")
     public void create(@RequestBody Usuario user){
         userService.save(user);
+        System.out.println("crea");
     }
 
     @DeleteMapping("/delete/{id}")
